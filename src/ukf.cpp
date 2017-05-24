@@ -55,10 +55,7 @@ UKF::UKF() {
   
   ///* time when the state is true, in us
   time_us_ = 0;
-  
-  ///* Weights of sigma points
-  weights_ = VectorXd(2*n_aug_+1);
-  
+
   ///* State dimension (int)
   n_x_ = 5;
   
@@ -67,6 +64,9 @@ UKF::UKF() {
   
   ///* Sigma point spreading parameter (double)
   lambda_ = 3 - n_x_;
+  
+  ///* Weights of sigma points
+  weights_ = VectorXd(2*n_aug_+1);
   
   ///* predicted sigma points matrix
   Xsig_pred_ = MatrixXd(n_x_,n_aug_*2+1);
